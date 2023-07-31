@@ -6,7 +6,17 @@
 ### array element on screen
 ![array element ](image-1.png)
 
+### props uses
 
+![props](image-2.png)
+
+### routing
+
+![home page](image-3.png)
+![user page](image-4.png)
+
+![Routing from user to home with link](image-5.png)
+![Routing from home to user with link](image-6.png)
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
