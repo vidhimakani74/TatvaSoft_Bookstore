@@ -1,11 +1,21 @@
-export const User=(props)=>{
+// export const User=(props)=>{
+//     return(
+//         <h1>This is User componenet
+//             <h4>Welcome {props.name}</h4>
+//         </h1>
+//     )
+//  };
+
+//  without props
+
+export const User=({name, age})=>{
     return(
-        <h1>This is User componenet
-            <h4>Welcome {props.name}</h4>
+        <h1>This is User componenet{name} {age}
+            {/* <h4>Welcome {name}</h4>
+            <h6>Age {age}</h6> */}
         </h1>
     )
  };
-
 
 //  or
 

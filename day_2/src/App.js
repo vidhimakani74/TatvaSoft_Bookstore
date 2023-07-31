@@ -44,6 +44,9 @@ function App() {
       {/* use var in user component */}
       <User name={userName} />
 
+      {/* without props */}
+      <User name={userName} age={40}/>
+
       {/* use of map to print array ele on screen*/}
       {array.map((item)=>{
         return <h6>{item}</h6>
