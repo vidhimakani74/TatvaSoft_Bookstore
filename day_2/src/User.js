@@ -1,6 +1,8 @@
- export const User=()=>{
+export const User=(props)=>{
     return(
-        <h1>This is User componenet</h1>
+        <h1>This is User componenet
+            <h4>Welcome {props.name}</h4>
+        </h1>
     )
  };
 

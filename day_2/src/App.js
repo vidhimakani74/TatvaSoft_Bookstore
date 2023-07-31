@@ -4,6 +4,9 @@ import { User } from './User';
 
 function App() {
 
+  //prps -- use var in fun
+  const userName="Vidhi";
+
   //var 
   let x=5;
 
@@ -13,7 +16,7 @@ function App() {
   const filterdarray=array.filter((item)=>item!==30); //it works as loop
   console.log(filterdarray);
 
-  //aray method :map
+  //aray method : map
   const mapedarray=array.map((item)=>item!==30); //it works as loop
   console.log(mapedarray);
 
@@ -37,7 +40,9 @@ function App() {
           Learn React {x}
         </a>
       </header>
-      <User/>
+
+      {/* use var in user component */}
+      <User name={userName} />
 
       {/* use of map to print array ele on screen*/}
       {array.map((item)=>{
