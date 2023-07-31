@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 // export const User=(props)=>{
 //     return(
 //         <h1>This is User componenet
@@ -10,9 +12,11 @@
 
 export const User=({name, age})=>{
     return(
-        <h1>This is User componenet{name} {age}
-            {/* <h4>Welcome {name}</h4>
-            <h6>Age {age}</h6> */}
+        <h1>This is User componenet
+            <h4>Welcome {name}</h4>
+            <h6>Age {age}</h6>
+
+            <NavLink to={"/"}>Home</NavLink>
         </h1>
     )
  };
@@ -31,3 +35,14 @@ export const User=({name, age})=>{
 // with default keyword u can export only one var/ fun
 // export default User;
 // & don't use {} in import as well & u can use any name in import
+
+export const Home=()=>{
+    return(
+        <h1>This is Home componenet
+            <h4><NavLink to={"/User"}>User</NavLink></h4>
+            
+        </h1>
+
+    )
+ };
+
