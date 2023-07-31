@@ -3,7 +3,16 @@ import './App.css';
 import { User } from './User';
 
 function App() {
-  let x=5
+
+  //var 
+  let x=5;
+
+  //array 
+  const array=[10,20,30,40,50];
+  //aray method : filter
+  const filterdarray=array.filter((item)=>item!==30) //it works as loop
+  console.log(filterdarray)
+
   return (
     <div className="App">
       <header className="App-header">
