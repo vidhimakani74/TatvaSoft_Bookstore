@@ -10,8 +10,16 @@ function App() {
   //array 
   const array=[10,20,30,40,50];
   //aray method : filter
-  const filterdarray=array.filter((item)=>item!==30) //it works as loop
-  console.log(filterdarray)
+  const filterdarray=array.filter((item)=>item!==30); //it works as loop
+  console.log(filterdarray);
+
+  //aray method :map
+  const mapedarray=array.map((item)=>item!==30); //it works as loop
+  console.log(mapedarray);
+
+  // const fivearray=array.map((item)=>item*5); //it works as loop
+  // console.log(fivearray);
+
 
   return (
     <div className="App">
@@ -30,6 +38,12 @@ function App() {
         </a>
       </header>
       <User/>
+
+      {/* use of map to print array ele on screen*/}
+      {array.map((item)=>{
+        return <h6>{item}</h6>
+      })}
+
     </div>
   );
 }

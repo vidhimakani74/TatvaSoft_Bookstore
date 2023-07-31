@@ -1,6 +1,11 @@
 # Day 2 Task submission
 
+### user componet added
 ![User component](image.png)
+
+### array element on screen
+![array element ](image-1.png)
+
 
 ## Getting Started with Create React App
 
