@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Day 2 Task submission
+
+![User component](image.png)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
