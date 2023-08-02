@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { NavLink } from "react-router-dom";
+import logo from "../src//assets/logo.svg"
 
 export const User=({name, age})=>{
     return(
@@ -18,6 +18,7 @@ export const User=({name, age})=>{
             <h2>
                 Go to Home 👆
             </h2>
+            <img src={logo} />
         </React.Fragment>
     )
  };
