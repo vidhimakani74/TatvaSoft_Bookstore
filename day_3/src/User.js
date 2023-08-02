@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import logo from "../src//assets/logo.svg"
+import { Profile } from './components/profile/Profile';
 
 export const User=({name, age})=>{
     return(
@@ -26,12 +27,10 @@ export const User=({name, age})=>{
 export const Home=()=>{
     return(
         <>
-       
         <h1>This is Home componenet
             <h4><NavLink to={"/User"}>User</NavLink></h4>
-            
+            <h4><NavLink to={"/Profile"}>Profile</NavLink></h4>
         </h1>
-        <h2>Go to User 👆</h2>
         </>
 
     )
