@@ -2,14 +2,26 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 export const User = ({ name, age }) => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [details, setDetails]=useState({
+        email:"",
+        password:"",
+    });
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+const handleChange=(e,property)=>{
+    setDetails({
+        ...details, //spread operator- Updating input states - it store the previous value & if bellow statement change the value then it overwrite it 
+        [property]: e.target.value
+    }
+    )
+};
+
     return (
         <>
         <form>
-            <input value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-            <input value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-            <button onClick={()=>window.alert(`Email is ${email}. Password is ${password}`)}>Submit</button>
+            <input value={details.email} onChange={(e)=>{handleChange(e, "email")}}/>
+            <input value={details.password} onChange={(e)=>{handleChange(e,"password")}}/>
+            <button onClick={()=>window.alert(`Email is ${details.email}. Password is ${details.password}`)}>Submit</button>
         </form>
         </>
     );
