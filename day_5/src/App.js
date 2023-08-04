@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core';
+import { Routes } from 'react-router-dom';
+import { Route } from "react-router-dom";
+import { Home } from "./User";
+import { User } from "./User";
+import { createTheme } from '@material-ui/core';
+import { Profile } from './components/profile/Profile.jsx'
 
 function App() {
+  const userName = "Vidhi";
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#e57373",
+      },
+      secondary: {
+        main: "#1976d2",
+      },
+    },
+    shadows:[
+      "1px 1px red"
+    ]
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          {/* routing */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/User" element={<User name={userName} age={20} />} />
+            <Route path="/Profile" element={<Profile />} />
+          </Routes>
+        </div>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
