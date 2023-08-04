@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 // import { Profile } from './components/profile/Profile';
 
 export const User=({name, age})=>{
+    const x =5;
     return(
         // only return 1 element so that when u want to use multiple div or any other element 
         // then u can wrap it into the <></> or <React.Fragment></React.Fragment> tags
@@ -13,7 +14,8 @@ export const User=({name, age})=>{
             <h1>This is User component
                 <h4>Welcome {name}</h4>
                 <h6>Age {age}</h6>
-
+                {x}
+                <br />
                 <NavLink to={"/"}>Home</NavLink>
             </h1>
             <h2>

@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import { User } from './User';
 import { Home } from "./User";
@@ -7,7 +6,7 @@ import { Profile } from './components/profile/Profile';
 
 function App() {
 
-  //prps -- use var in fun
+  //props -- use var in fun
   const userName="Vidhi";
   return (
 
