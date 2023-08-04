@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const User = ({ name, age }) => {
     const [details, setDetails]=useState({
@@ -15,6 +15,12 @@ const handleChange=(e,property)=>{
     }
     )
 };
+
+//useEffect is hook-allows you to perform side effects in your components
+
+//1st arg->()=>{}- is fun 
+//2nd arg->[]- is dependency array-it controls, on which action function perform
+useEffect(()=>{},[])
 
     return (
         <>
