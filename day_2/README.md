@@ -13,7 +13,7 @@
 ### routing
 
 ![home page](day_2\src\assets\image-3.png)
-![user page](image-4.png)
+![user page](day_2\src\assets\image-4.png)
 
 ![Routing from user to home with link](day_2\src\assets\image-5.png)
 ![Routing from home to user with link](day_2\src\assets\image-6.png)
