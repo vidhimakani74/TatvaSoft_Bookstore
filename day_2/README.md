@@ -1,22 +1,22 @@
 # Day 2 Task submission
 
 ### user componet added
-![User component](image.png)
+![User component](day_2\src\assets\image.png)
 
 ### array element on screen
-![array element ](image-1.png)
+![array element ](day_2\src\assets\image-1.png)
 
 ### props uses
 
-![props](image-2.png)
+![props](day_2\src\assets\image-2.png)
 
 ### routing
 
-![home page](image-3.png)
+![home page](day_2\src\assets\image-3.png)
 ![user page](image-4.png)
 
-![Routing from user to home with link](image-5.png)
-![Routing from home to user with link](image-6.png)
+![Routing from user to home with link](day_2\src\assets\image-5.png)
+![Routing from home to user with link](day_2\src\assets\image-6.png)
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
