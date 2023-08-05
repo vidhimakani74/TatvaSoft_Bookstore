@@ -73,6 +73,9 @@ export const Home = () => {
       <h1>
         This is Home component
         <h4>
+          <NavLink to={"/Register"}>Register</NavLink>
+        </h4>
+        <h4>
           <NavLink to={"/User"}>User</NavLink>
         </h4>
         <h4>
