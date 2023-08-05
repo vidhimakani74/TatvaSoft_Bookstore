@@ -1,9 +1,8 @@
 # Day 5 Task submission
 
 ## Registration form
-
-![Alt text](image.png)
-![Alt text](image-1.png)
+![Registration form with error](src/assets/image.png)
+![successful registration](src/assets/image-1.png)
 
 # Getting Started with Create React App
 
