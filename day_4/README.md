@@ -1,15 +1,15 @@
 # Day 4 Task submission
 
 ## Layout
-![Alt text](image.png)
+![Alt text](day_4\src\assets\image.png)
 
 ## increment
 
-![Alt text](image-1.png)
+![Alt text](day_4\src\assets\image-1.png)
 
 ## decrement
 
-![Alt text](image-2.png)
+![Alt text](day_4\src\assets\image-2.png)
 
 # Getting Started with Create React App
 
