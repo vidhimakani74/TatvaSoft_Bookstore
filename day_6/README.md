@@ -2,11 +2,11 @@
 
 ## Registration as per requirement
 
-![Registration](day_6\src\assets\images\image-1.png)
+![Registration](src/assets/images/image-1.png)
 
 ## Practice Registration
 
-![SubmittedData](day_6\src\assets\images\image.png)
+![Practice Registration](src/assets/images/image.png)
 
 
 # Getting Started with Create React App
