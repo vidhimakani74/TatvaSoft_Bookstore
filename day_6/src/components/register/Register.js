@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import {
   TextField,
   FormControl,
-  InputLabel,
   MenuItem,
   Select,
   Button,
@@ -127,9 +126,7 @@ function Register() {
                     variant="outlined"
                     onBlur={handleBlur}
                   >
-                    <InputLabel id="demo-simple-select-outlined-label">
-                      Roles*
-                    </InputLabel>
+                    <label htmlFor="">Roles*</label>
                     <Select
                       labelId="demo-simple-select-outlined-label"
                       name="roleId"
