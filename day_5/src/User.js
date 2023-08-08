@@ -1,22 +1,22 @@
 import { NavLink } from 'react-router-dom';
-import {useState } from 'react';
+// import {useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 export const User = ({ name, age }) => {
-  const [details, setDetails] = useState({
-    email: "",
-    password: "",
-  });
+  // const [details, setDetails] = useState({
+  //   email: "",
+  //   password: "",
+  // });
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
-  const handleChange = (e, property) => {
-    setDetails({
-      ...details, //spread operator- Updating input states - it store the previous value & if bellow statement change the value then it overwrite it 
-      [property]: e.target.value
-    }
-    )
-  };
+  // const handleChange = (e, property) => {
+  //   setDetails({
+  //     ...details, //spread operator- Updating input states - it store the previous value & if bellow statement change the value then it overwrite it 
+  //     [property]: e.target.value
+  //   }
+  //   )
+  // };
 
   const initialValue={
     email:"",

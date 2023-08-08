@@ -1,96 +1,197 @@
-import * as Yup from "yup";
 import { Formik } from "formik";
+import * as Yup from "yup";
+import {
+  TextField,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  Button,
+} from "@material-ui/core";
+import { ErrorMessage } from "./ErrorMessage";
 import classes from "./Register.module.css";
-import { ErrorMsg } from "./ErrorMsg";
+import { toast } from "react-toastify";
+import authService from "./../../service/auth.service";
 
-export const Register = () => {
+function Register() {
   const initialValue = {
-    username: "",
+    firstName: "",
+    lastName: "",
     email: "",
+    roleId: 0,
     password: "",
-    confirmPassword: "",
+    conpassword: "",
   };
   const validationSchema = Yup.object().shape({
-    username: Yup.string()
-      .required("Username is required")
-      .min(6, "Username must be at least 6 characters")
-      .max(20, "Username must not exceed 20 characters"),
-    email: Yup.string().required("Email is required").email("Email is invalid"),
+    firstName: Yup.string()
+      .required("First Name is required")
+      .matches(/^[aA-zZ\s]+$/, "Enter valid first name"),
+    lastName: Yup.string()
+      .required("Last Name is required")
+      .matches(/^[aA-zZ\s]+$/, "Enter valid last name"),
+    email: Yup.string()
+      .required("Email is required")
+      .email("Enter valid email"),
+    roleId: Yup.number().required("Role is required"),
     password: Yup.string()
       .required("Password is required")
-      .min(6, "Password must be at least 6 characters")
-      .max(10, "Password must not exceed 10 characters"),
-    confirmPassword: Yup.string()
+      .min(5, "password must be atleast 5 character long")
+      .max(12, "password must be atmost 12 charactes long"),
+    conpassword: Yup.string()
       .required("Confirm Password is required")
-      .oneOf([Yup.ref("password"), null], "Confirm Password does not match"),
+      .oneOf(
+        [Yup.ref("password"), null],
+        "password and confirm password must be match"
+      ),
   });
 
+  const onSubmit = (data) => {
+    delete data.conpassword;
+    authService.create(data).then((res) => {
+      //   navigate("/login");
+      toast.success("Successfully registered");
+    });
+    // alert("Registered");
+  };
+
   return (
-    <>
+    <div className={classes.formWrapper}>
       <Formik
         initialValues={initialValue}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
-          alert("Registered Successfully");
-        }}
+        onSubmit={onSubmit}
       >
-        {({ values, errors, handleChange, handleSubmit }) => {
+        {({
+          values,
+          touched,
+          errors,
+          handleBlur,
+          handleChange,
+          handleSubmit,
+        }) => {
           return (
-            
             <form onSubmit={handleSubmit}>
-                <h1 className='name'>Registration Form</h1>
-                 <hr/>
+              <h2 className={classes.heading}>Personal Information</h2>
+              <hr className={classes.loginline} />
+              <p className={classes.heading}>
+                Please enter the following details to create your account
+              </p>
               <div className={classes.row}>
-                <div className="form-group">
-                  <label className='n1'>Username: </label>
-                  <input
+                <div className={classes.fieldWrapper}>
+                  <TextField
+                    className={classes.field}
+                    label="First Name*"
+                    variant="outlined"
                     type="text"
-                    name="username"
+                    name="firstName"
+                    onBlur={handleBlur}
                     onChange={handleChange}
-                    required
                   />
-                  <br />
-                  <ErrorMsg error={errors.username} />
+                  <ErrorMessage
+                    error={errors.firstName}
+                    touch={touched.firstName}
+                  />
                 </div>
-                <div className="form-group">
-                  <label className='n1'>Email: </label>
-                  <input
-                    type="email"
-                    name="email"
+                <div className={classes.fieldWrapper}>
+                  <TextField
+                    className={classes.field}
+                    label="Last Name*"
+                    variant="outlined"
+                    type="text"
+                    name="lastName"
+                    onBlur={handleBlur}
                     onChange={handleChange}
-                    required
                   />
-                  <br />
-                  <ErrorMsg error={errors.email} />
-                </div>
-                <div className="form-group">
-                  <label className='n1'>Password: </label>
-                  <input
-                    type="password"
-                    name="password"
-                    onChange={handleChange}
-                    required
+                  <ErrorMessage
+                    error={errors.lastName}
+                    touch={touched.lastName}
                   />
-                  <br />
-                  <ErrorMsg error={errors.password} />
-                </div>
-                <div className="form-group">
-                  <label className='n1'>Confirm Password: </label>
-                  <input
-                    type="password"
-                    name="confirmPassword"
-                    onChange={handleChange}
-                    required
-                  />
-                  <br />
-                  <ErrorMsg error={errors.confirmPassword} />
                 </div>
               </div>
-              <button type="submit">Register</button>
+              <div className={classes.row}>
+                <div className={classes.fieldWrapper}>
+                  <TextField
+                    className={classes.field}
+                    label="Email*"
+                    variant="outlined"
+                    type="text"
+                    name="email"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage error={errors.email} touch={touched.email} />
+                </div>
+                <div className={classes.fieldWrapper}>
+                  <FormControl
+                    className={classes.field}
+                    variant="outlined"
+                    onBlur={handleBlur}
+                  >
+                    <InputLabel id="demo-simple-select-outlined-label">
+                      Roles*
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-outlined-label"
+                      name="roleId"
+                      onChange={handleChange}
+                      label="Roles*"
+                      width={15}
+                    >
+                      <MenuItem value={2}>Buyer</MenuItem>
+                      <MenuItem value={3}>Seller</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <ErrorMessage error={errors.roleId} touch={touched.roleId} />
+                </div>
+              </div>
+              <h2 className={classes.heading}>Login Information</h2>
+              <hr className={classes.loginline} />
+              <div className={classes.row}>
+                <div className={classes.fieldWrapper}>
+                  <TextField
+                    className={classes.field}
+                    label="Password*"
+                    variant="outlined"
+                    type="password"
+                    name="password"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    error={errors.password}
+                    touch={touched.password}
+                  />
+                </div>
+                <div className={classes.fieldWrapper}>
+                  <TextField
+                    className={classes.field}
+                    label="Confirm Password*"
+                    variant="outlined"
+                    type="password"
+                    name="conpassword"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    error={errors.conpassword}
+                    touch={touched.conpassword}
+                  />
+                </div>
+              </div>
+              <Button
+                color="primary"
+                variant="contained"
+                size="medium"
+                type="submit"
+              >
+                Submit
+              </Button>
             </form>
           );
         }}
       </Formik>
-    </>
+    </div>
   );
-};
+}
+
+export { Register };
