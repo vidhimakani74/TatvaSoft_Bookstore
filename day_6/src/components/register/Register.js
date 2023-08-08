@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Formik } from "formik";
 import * as Yup from "yup";
 import {
@@ -13,6 +14,7 @@ import { toast } from "react-toastify";
 import authService from "./../../service/auth.service";
 
 function Register() {
+  const [submittedData, setSubmittedData] = useState([]);
   const initialValue = {
     firstName: "",
     lastName: "",
@@ -45,6 +47,7 @@ function Register() {
   });
 
   const onSubmit = (data) => {
+      setSubmittedData((prevData) => [...prevData, data]);
     delete data.conpassword;
     authService.create(data).then((res) => {
       //   navigate("/login");
@@ -187,7 +190,16 @@ function Register() {
           );
         }}
       </Formik>
+      <div className="submitted-data">
+        <h2 className='n1'>Submitted Data</h2>
+        {submittedData.map((data, index) => (
+          <div key={index} className="submitted-item">
+            <pre className='p1'>{JSON.stringify(data, null, 2)}</pre>
+          </div>
+        ))}
+      </div>
     </div>
+    
   );
 }
 
