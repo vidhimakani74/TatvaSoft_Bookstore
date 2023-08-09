@@ -1,5 +1,6 @@
 # Day 7 Task submission
 
+![Login Page](day_7\src\assets\images\image.png)
 
 # Getting Started with Create React App
 
