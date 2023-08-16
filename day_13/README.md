@@ -1,3 +1,11 @@
+# Day 13 tasks
+
+## Category
+![Category](image.png)
+
+## Update Profile
+![Update Profile](image-1.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

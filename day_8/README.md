@@ -1,5 +1,6 @@
-# Day 7 Task submission
+# Day 8 Task submission
 
+## Header & Footer
 ![Header & Footer](image.png)
 
 # Getting Started with Create React App

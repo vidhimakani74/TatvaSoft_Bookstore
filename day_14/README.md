@@ -1,3 +1,8 @@
+# Day 14 tasks
+
+## cart & place order button
+![cart](image.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
